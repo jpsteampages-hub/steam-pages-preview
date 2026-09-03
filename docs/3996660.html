@@ -41,7 +41,10 @@ h1{font-size:clamp(28px,4vw,44px);line-height:1.1;margin:0 0 10px;font-weight:80
 .pack li::before{content:"";position:absolute;left:0;top:9px;width:11px;height:11px;border-radius:50%;background:var(--green)}
 .price{font-size:34px;font-weight:800;line-height:1.1;margin:4px 0 6px}
 .price small{font-size:15px;color:var(--muted);font-weight:400;margin-left:8px}
-.cta{display:inline-block;margin-top:12px;background:var(--green);color:#0b1620;font-weight:700;padding:12px 18px;border-radius:3px}
+.cta{display:inline-block;margin:12px 8px 0 0;background:var(--green);color:#0b1620;font-weight:700;padding:12px 18px;border-radius:3px;text-decoration:none}
+.cta2{background:var(--blue)}
+.cta:hover{filter:brightness(1.08)}
+.muted{color:var(--muted)}
 .foot{margin-top:40px;color:var(--muted);font-size:12.5px}
 @media (max-width:760px){.pack{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
@@ -87,7 +90,9 @@ h1{font-size:clamp(28px,4vw,44px);line-height:1.1;margin:0 0 10px;font-weight:80
       <div class="price">$99<small>+ Korean, German, Latin-American Spanish</small></div>
       <p>One-time, delivered in 24 h. If it isn't better than what you have, don't pay.</p>
       <p>Want the game's own UI and menus too? Up to 2,000 words, Chinese + Japanese, native post-edit, 72 h: $399.</p>
-      <span class="cta">Reply "yes" to the email</span>
+      <a class="cta" href="https://paypal.me/abeldisilvestri/49USD" target="_blank" rel="noopener">Pay $49 · Chinese + Japanese</a>
+      <a class="cta cta2" href="https://paypal.me/abeldisilvestri/99USD" target="_blank" rel="noopener">Pay $99 · 5 languages</a>
+      <p class="muted" style="margin-top:10px;font-size:13px">Card or PayPal, no account needed. After paying, reply to the email with your Steam link and the pack you chose. Or just reply "yes" and I'll send an invoice.</p>
     </div>
   </div>
   <p class="foot">Preview built from your public Steam page, for your eyes only. Not affiliated with Valve. Store art belongs to Glowmatic LLC.</p>
