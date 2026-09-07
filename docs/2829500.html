@@ -41,7 +41,10 @@ h1{font-size:clamp(28px,4vw,44px);line-height:1.1;margin:0 0 10px;font-weight:80
 .pack li::before{content:"";position:absolute;left:0;top:9px;width:11px;height:11px;border-radius:50%;background:var(--green)}
 .price{font-size:34px;font-weight:800;line-height:1.1;margin:4px 0 6px}
 .price small{font-size:15px;color:var(--muted);font-weight:400;margin-left:8px}
-.cta{display:inline-block;margin-top:12px;background:var(--green);color:#0b1620;font-weight:700;padding:12px 18px;border-radius:3px}
+.cta{display:inline-block;margin:12px 8px 0 0;background:var(--green);color:#0b1620;font-weight:700;padding:12px 18px;border-radius:3px;text-decoration:none}
+.cta2{background:var(--blue)}
+.cta:hover{filter:brightness(1.08)}
+.muted{color:var(--muted)}
 .foot{margin-top:40px;color:var(--muted);font-size:12.5px}
 @media (max-width:760px){.pack{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
@@ -52,6 +55,7 @@ h1{font-size:clamp(28px,4vw,44px);line-height:1.1;margin:0 0 10px;font-weight:80
   <p class="eyebrow">Steam store page preview · Thorgard</p>
   <h1>Your page, as a player in Shanghai sees it.</h1>
   <p class="lede">This is <b>Thorgard</b>'s real Steam page with your short description in native Simplified Chinese and Japanese. Steam's own interface is already localized; the only thing missing was your text. <b>Drag the handle</b> to compare with your current page.</p>
+  <p class="lede">This is a store-page test, the way Steamworks recommends measuring regional wishlists. Your language table stays exactly as it is, and the page carries a clear "game currently available in English" note, so no player is misled.</p>
 
   <div class="tabs" role="tablist" aria-label="Language">
     <button class="tab" role="tab" aria-selected="true" data-lang="zh">简体中文 · Simplified Chinese</button>
@@ -73,20 +77,24 @@ h1{font-size:clamp(28px,4vw,44px);line-height:1.1;margin:0 0 10px;font-weight:80
 
   <div class="pack">
     <div>
-      <h2>The full page, in 24 hours</h2>
-      <p>Everything a player reads before wishlisting, written natively and delivered as ready-to-paste Steamworks fields.</p>
+      <h2>The whole game, in Chinese and Japanese</h2>
+      <p>Send your strings file (CSV, JSON, spreadsheet, .po, anything). You get it back with the new columns filled in, keys and placeholders untouched, plus a glossary so updates stay consistent.</p>
       <ul>
-        <li>Long description ("About this game"), feature list, tags and capsule text</li>
-        <li>Character limits respected, tags matched to each region's vocabulary</li>
-        <li>Ready-to-paste Steamworks fields, delivered in 24 hours</li>
+        <li>$0.03 per word, per language. No minimum: a 2,000-word game in both languages is $120</li>
+        <li>72 hours for anything up to 10,000 words. First round of fixes free</li>
+        <li>This store page, fully translated, included at no charge with any in-game order</li>
       </ul>
     </div>
     <div>
-      <div class="price">$49<small>Simplified Chinese + Japanese</small></div>
-      <div class="price">$99<small>+ Korean, German, Latin-American Spanish</small></div>
-      <p>One-time, delivered in 24 h. If it isn't better than what you have, don't pay.</p>
-      <span class="cta">Reply "yes" to the email</span>
+      <div class="price">$0.03<small>per word, per language · no minimum</small></div>
+      <div class="price">Free<small>test: 200 lines of your game, back in 24 h</small></div>
+      <p>Reply to the email with your word count (or just the file) and you get the exact price and a payment link. If it isn't better than what you have, don't pay.</p>
+      <p>Only want this store page? $49 for Chinese + Japanese, $99 for five languages.</p>
+      <a class="cta" href="mailto:disilvestriabel@gmail.com?subject=Thorgard%20translation" rel="noopener">Send my strings for a free 200-line test</a>
+      <a class="cta cta2" href="https://paypal.me/abeldisilvestri/49USD" target="_blank" rel="noopener">Store page only · $49</a>
+      <p class="muted" style="margin-top:10px;font-size:13px">Card or PayPal, no account needed. Your Steam language table only changes when you decide to ship the translation.</p>
     </div>
+  </div>
   </div>
   <p class="foot">Preview built from your public Steam page, for your eyes only. Not affiliated with Valve. Store art belongs to Nightscape Games.</p>
 </div>
