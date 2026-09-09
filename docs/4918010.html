@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sudokiller · your Steam page in Chinese and Japanese</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;800&family=Noto+Sans+SC:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap">
+<style>
+:root{--bg:#0f1721;--panel:#1b2838;--line:#2a475e;--ink:#e3ebf2;--muted:#8fa3b3;--blue:#66c0f4;--green:#8bc53f}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans","Noto Sans SC","Noto Sans JP",Arial,sans-serif;font-size:16px;line-height:1.5}
+.wrap{max-width:1180px;margin:0 auto;padding:36px 22px 80px}
+.eyebrow{color:var(--blue);font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin:0 0 10px}
+h1{font-size:clamp(28px,4vw,44px);line-height:1.1;margin:0 0 10px;font-weight:800;letter-spacing:-.01em}
+.lede{color:var(--muted);max-width:62ch;margin:0 0 26px;font-size:17px}
+.lede b{color:var(--ink);font-weight:600}
+.tabs{display:flex;gap:6px;margin:0 0 12px;flex-wrap:wrap}
+.tab{background:var(--panel);border:1px solid var(--line);color:var(--ink);padding:9px 16px;border-radius:3px;cursor:pointer;font:inherit;font-size:15px}
+.tab[aria-selected="true"]{background:var(--blue);color:#0b1620;border-color:var(--blue);font-weight:600}
+.tab:focus-visible,.handle:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.frame{position:relative;border:1px solid var(--line);border-radius:4px;overflow:hidden;background:#000;box-shadow:0 30px 60px rgba(0,0,0,.45);user-select:none}
+.frame img{display:block;width:100%;height:auto}
+.frame .top{position:absolute;inset:0;width:58%;overflow:hidden}
+.frame .top img{max-width:none}
+.handle{position:absolute;top:0;bottom:0;left:58%;width:0;border-left:2px solid #fff;cursor:ew-resize}
+.handle span{position:absolute;top:50%;left:-22px;width:44px;height:44px;border-radius:50%;background:#fff;color:#0b1620;display:flex;align-items:center;justify-content:center;font-weight:800;transform:translateY(-50%);box-shadow:0 4px 14px rgba(0,0,0,.4)}
+.labels{display:flex;justify-content:space-between;margin:10px 2px 0;color:var(--muted);font-size:13px}
+.labels b{color:var(--ink);font-weight:600}
+.texts{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin:44px 0 0}
+.card{background:var(--panel);border:1px solid var(--line);padding:18px 20px;border-radius:4px}
+.card h2{margin:0 0 4px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);font-weight:600}
+.card h3{margin:0 0 8px;font-size:20px;font-weight:700}
+.card p{margin:0}
+.card.en p{color:var(--muted)}
+.pack{margin:44px 0 0;border-top:1px solid var(--line);padding-top:28px;display:grid;grid-template-columns:1.2fr 1fr;gap:28px}
+.pack h2{margin:0 0 8px;font-size:24px;font-weight:800}
+.pack p{margin:0 0 10px;color:var(--muted)}
+.pack ul{margin:0;padding:0;list-style:none;display:grid;gap:6px}
+.pack li{padding-left:22px;position:relative}
+.pack li::before{content:"";position:absolute;left:0;top:9px;width:11px;height:11px;border-radius:50%;background:var(--green)}
+.price{font-size:34px;font-weight:800;line-height:1.1;margin:4px 0 6px}
+.price small{font-size:15px;color:var(--muted);font-weight:400;margin-left:8px}
+.cta{display:inline-block;margin:12px 8px 0 0;background:var(--green);color:#0b1620;font-weight:700;padding:12px 18px;border-radius:3px;text-decoration:none}
+.cta2{background:var(--blue)}
+.cta:hover{filter:brightness(1.08)}
+.muted{color:var(--muted)}
+.foot{margin-top:40px;color:var(--muted);font-size:12.5px}
+@media (max-width:760px){.pack{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="eyebrow">Steam store page preview · Sudokiller</p>
+  <h1>Your page, as a player in Shanghai sees it.</h1>
+  <p class="lede">This is <b>Sudokiller</b>'s real Steam page with your short description in native Simplified Chinese and Japanese. Steam's own interface is already localized; the only thing missing was your text. <b>Drag the handle</b> to compare with your current page.</p>
+  <p class="lede">This is a store-page test, the way Steamworks recommends measuring regional wishlists. Your language table stays exactly as it is, and the page carries a clear "game currently available in English" note, so no player is misled.</p>
+
+  <div class="tabs" role="tablist" aria-label="Language">
+    <button class="tab" role="tab" aria-selected="true" data-lang="zh">简体中文 · Simplified Chinese</button>
+    <button class="tab" role="tab" aria-selected="false" data-lang="ja">日本語 · Japanese</button>
+  </div>
+
+  <div class="frame" id="frame">
+    <img id="base" src="img/4918010_en.jpg" alt="Your current Steam page in English">
+    <div class="top" id="top"><img id="over" src="img/4918010_zh.jpg" alt="Your Steam page in Simplified Chinese"></div>
+    <div class="handle" id="handle" role="slider" aria-label="Compare" aria-valuemin="0" aria-valuemax="100" aria-valuenow="58" tabindex="0"><span>&#8596;</span></div>
+  </div>
+  <div class="labels"><span><b id="leftLabel">简体中文</b> · with your text translated</span><span>English · your page today</span></div>
+
+  <div class="texts">
+    <div class="card en"><h2>English · yours</h2><h3>Sudokiller</h3><p>Sudokiller is a cozy mystery puzzle game where you place suspects on a sudoku-style grid to unmask a killer hiding in plain sight. Every guest leaves a clue pinning down where they stood at the time of the murder. Deduce your way through case after case in this cozy, cleverly deceptive mystery.</p></div>
+    <div class="card" lang="zh-Hans"><h2>简体中文</h2><h3>Sudokiller 数独凶手</h3><p>一款温馨的推理解谜游戏：把嫌疑人摆进数独式格盘，揪出藏在众目睽睽之下的真凶。每位宾客都会留下线索，指明命案发生时谁站在哪里。一桩接一桩地推理下去，在轻松的氛围里体验精心设计的巧妙误导。</p></div>
+    <div class="card" lang="ja"><h2>日本語</h2><h3>Sudokiller（スドキラー）</h3><p>容疑者を数独風のマス目に配置し、堂々と紛れ込んだ犯人を暴き出す、ほっと落ち着く推理パズル。招待客はそれぞれ、事件当時に誰がどこにいたかを示す手がかりを残していく。次々と現れる事件を推理で突破しよう。穏やかな空気の裏に、巧妙なミスリードが仕込まれた一作。</p></div>
+  </div>
+
+  <div class="pack">
+    <div>
+      <h2>The whole game, in Chinese and Japanese</h2>
+      <p>Send your strings file (CSV, JSON, spreadsheet, .po, anything). You get it back with the new columns filled in, keys and placeholders untouched, plus a glossary so updates stay consistent.</p>
+      <ul>
+        <li>$0.03 per word, per language, no minimum: a 2,000-word game in both languages is $120; all five languages (add Korean, German, Latin-American Spanish) $300</li>
+        <li>Next Fest runs October 19–26 and demo builds are due September 28: 72-hour delivery gets the translation into the demo players will see</li>
+        <li>72 hours for anything up to 10,000 words. First round of fixes free</li>
+        <li>This store page, fully translated, included at no charge with any in-game order</li>
+      </ul>
+    </div>
+    <div>
+      <div class="price">$0.03<small>per word, per language · no minimum</small></div>
+      <div class="price">Free<small>test: 200 lines of your game, back in 24 h</small></div>
+      <p>Reply to the email with your word count (or just the file) and you get the exact price and a payment link. If it isn't better than what you have, don't pay.</p>
+      <p>Only want this store page? $49 for Chinese + Japanese, $99 for five languages.</p>
+      <a class="cta" href="mailto:disilvestriabel@gmail.com?subject=Sudokiller%20translation" rel="noopener">Send my strings for a free 200-line test</a>
+      <a class="cta cta2" href="https://paypal.me/abeldisilvestri/49USD" target="_blank" rel="noopener">Store page only · $49</a>
+      <p class="muted" style="margin-top:10px;font-size:13px">Card or PayPal, no account needed. Your Steam language table only changes when you decide to ship the translation.</p>
+    </div>
+  </div>
+  </div>
+  <p class="foot">Preview built from your public Steam page, for your eyes only. Not affiliated with Valve. Store art belongs to Tranqui Games.</p>
+</div>
+<script>
+(function(){
+  var frame=document.getElementById('frame'),top=document.getElementById('top'),handle=document.getElementById('handle'),over=document.getElementById('over'),base=document.getElementById('base');
+  function setPos(p){p=Math.max(2,Math.min(98,p));top.style.width=p+'%';handle.style.left=p+'%';handle.setAttribute('aria-valuenow',Math.round(p));}
+  function sync(){over.style.width=base.clientWidth+'px';}
+  window.addEventListener('resize',sync);base.addEventListener('load',sync);over.addEventListener('load',sync);sync();
+  var drag=false;
+  function move(e){var x=(e.touches?e.touches[0].clientX:e.clientX)-frame.getBoundingClientRect().left;setPos(x/frame.clientWidth*100);}
+  frame.addEventListener('mousedown',function(e){drag=true;move(e);e.preventDefault();});window.addEventListener('mouseup',function(){drag=false;});window.addEventListener('mousemove',function(e){if(drag)move(e);});
+  frame.addEventListener('touchstart',function(e){drag=true;move(e);},{passive:true});frame.addEventListener('touchmove',function(e){if(drag)move(e);},{passive:true});frame.addEventListener('touchend',function(){drag=false;});
+  handle.addEventListener('keydown',function(e){var v=parseFloat(top.style.width)||58;if(e.key==='ArrowLeft')setPos(v-4);if(e.key==='ArrowRight')setPos(v+4);});
+  document.querySelectorAll('.tab').forEach(function(t){t.addEventListener('click',function(){document.querySelectorAll('.tab').forEach(function(x){x.setAttribute('aria-selected','false');});t.setAttribute('aria-selected','true');var l=t.dataset.lang;over.src='img/4918010_'+l+'.jpg';over.alt=l==='zh'?'Your Steam page in Simplified Chinese':'Your Steam page in Japanese';document.getElementById('leftLabel').textContent=l==='zh'?'简体中文':'日本語';});});
+})();
+</script>
+</body>
+</html>
